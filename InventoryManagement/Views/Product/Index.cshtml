@@ -1,0 +1,43 @@
+﻿@model IEnumerable<InventoryManagement.Models.Product>
+
+@{
+    ViewBag.Title = "Inventory Management";
+}
+
+<h2>Inventory Management</h2>
+
+<p>
+    @Html.ActionLink("Add New Product", "Create", "Product")
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Category</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId })
+                @using (Html.BeginForm("Delete", "Product", new { id = item.ProductId }, FormMethod.Post))
+                {
+                    <input type="submit" value="Delete"
+                           onclick="return confirm('Are you sure?')" />
+                }
+            </td>
+        </tr>
+    }
+</table>

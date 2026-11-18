@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="container">
+    <div style="background:linear-gradient(135deg,#102a43,#1769aa); color:white; padding:55px 40px; border-radius:15px; margin-top:30px;">
+        <h1 style="font-size:38px; font-weight:700;">Inventory Management System</h1>
+        <p style="font-size:17px; margin-top:15px;">
+            Manage your products, stock and inventory easily.
+        </p>
+        <br />
+        <a href="@Url.Action("Index", "Product")" class="btn btn-light btn-lg">
+            View Products
+        </a>
+        <a href="@Url.Action("Create", "Product")" class="btn btn-success btn-lg">
+            + Add Product
+        </a>
+    </div>
+
+    <div class="row" style="margin-top:35px;">
+        <div class="col-md-4">
+            <div style="background:white; padding:30px; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
+                <h3>📦 Products</h3>
+                <p>View and manage all your products.</p>
+                <a href="@Url.Action("Index", "Product")" class="btn btn-primary">View Products</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div style="background:white; padding:30px; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
+                <h3>➕ Add Product</h3>
+                <p>Add new products to your inventory.</p>
+                <a href="@Url.Action("Create", "Product")" class="btn btn-success">Add Product</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div style="background:white; padding:30px; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
+                <h3>⚙️ Management</h3>
+                <p>Update and manage product information.</p>
+                <a href="@Url.Action("Index", "Product")" class="btn btn-primary">Manage Stock</a>
+            </div>
+        </div>
+    </div>
+</div>

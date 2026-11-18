@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inventory Management</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            background: #f3f6fb;
+            color: #243447;
+        }
+
+        .navbar {
+            background: #102a43 !important;
+            padding: 14px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+        }
+
+        .navbar-brand {
+            font-size: 22px;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #eaf2f8 !important;
+            margin-left: 18px;
+            font-weight: 500;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #5bc0eb !important;
+            }
+
+        .body-content {
+            padding-top: 20px;
+            min-height: 75vh;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding: 20px 0;
+            color: #718096;
+            border-top: 1px solid #dce3eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container">
+            @Html.ActionLink("Inventory Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Products", "Index", "Product", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Add Product", "Create", "Product", null, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Inventory Management System</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
