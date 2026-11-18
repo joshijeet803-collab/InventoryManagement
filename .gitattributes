@@ -62,10 +62,15 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
+# C# source files
 *.cs linguist-language=C#
-Scripts/** linguist-vendored
 
-**/Scripts/** linguist-vendored
-**/Content/** linguist-vendored
+# Exclude third-party libraries
+Scripts/** linguist-vendored
+Content/** linguist-vendored
+packages/** linguist-vendored
+bin/** linguist-vendored
+obj/** linguist-vendored
+
+# Exclude minified JavaScript
 *.min.js linguist-vendored
-*.cs linguist-language=C#
