@@ -65,9 +65,7 @@
 *.cs linguist-language=C#
 Scripts/** linguist-vendored
 
+**/Scripts/** linguist-vendored
+**/Content/** linguist-vendored
+*.min.js linguist-vendored
 *.cs linguist-language=C#
-*.cshtml linguist-language=C#
-*.csproj linguist-language=C#
-*.config linguist-language=C#
-Scripts/** linguist-vendored
-Content/** linguist-vendored
